@@ -1,15 +1,7 @@
-# Organic Intelligence Protocol (OIP v1.0.26)
+## OIP v1.0.27 Updates
 
-Welcome to the official repository of the **Organic Intelligence Protocol (OIP)**. This framework introduces a resilience-weighted architecture designed for beyond-infrastructure intelligence systems.
+- **Mathematical Provenance & Addendum:** The `OIP_v1_0_27_Addendum.pdf` documents the specification-defined mathematical structures, initial calibration parameters, operational assumptions, boundary conditions, and unresolved operationalization gaps.
 
-## 📌 Overview
-Contemporary AI systems are heavily optimized for digitized info and formal credentials. OIP counters systemic institutional and infrastructure biases by integrating:
-* **High-Data Analytical Intelligence (HDAI)**
-* **Contextual Grounded Wisdom (CGW)**
+- **Reference Implementation:** The repository includes a specification-faithful reference implementation and sanity checks. An executable Google Colab notebook is available here: [OIP Reference Notebook](https://colab.research.google.com/drive/11BqhXrvq7d7Vdg3MFQSHf-MGIUXV75kB?usp=sharing)
 
-## 📂 Documentation
-* **Public Specification:** You can find the official 3-page whitepaper (`OIP_v1_0_26_Public_Specification_pdf.pdf`) in this repository detailing core mathematical filters, fragility audit models, and the Living Intelligence Nodes (LIN) framework.
-
-## 🔗 Connect & Verify
-* **Lead Architect:** Sudharsan Das (Tripura, India)
-* **Framework Version:** v1.0.26
+> **Validation status:** The reference implementation and sanity checks do not constitute empirical, economic, production, or hardware validation of the OIP framework.
