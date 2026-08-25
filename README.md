@@ -1,7 +1,22 @@
-## OIP v1.0.27 Updates
+# Organic Intelligence Protocol (OIP)
 
-- **Mathematical Provenance & Addendum:** The `OIP_v1_0_27_Addendum.pdf` documents the specification-defined mathematical structures, initial calibration parameters, operational assumptions, boundary conditions, and unresolved operationalization gaps.
+OIP is a research framework designed to test whether automated decision systems should prioritize real-world outcomes and resilience, rather than relying strictly on credentials and digital records.
 
-- **Reference Implementation:** The repository includes a specification-faithful reference implementation and sanity checks. An executable Google Colab notebook is available here: [OIP Reference Notebook](https://colab.research.google.com/drive/11BqhXrvq7d7Vdg3MFQSHf-MGIUXV75kB?usp=sharing)
+---
 
-> **Validation status:** The reference implementation and sanity checks do not constitute empirical, economic, production, or hardware validation of the OIP framework.
+### OIP v1.0.28 — Blind Evaluation & Rank-Shift Audit (Demonstration)
+
+This concept demonstration showcases how OIP's blind outcome evaluation shifts candidate rankings away from traditional credential bias.
+
+#### Audit Output Summary
+
+| Entity ID | OIP Blind Score (F1) | OIP Adjusted SIS (F2) | Credential Rank (CS Heavy) | OIP Blind Rank | Rank Shift ($\Delta R$) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Entity_A** | 0.385 | 0.0783 | **1** | 3 | **-2** |
+| **Entity_B** | **0.814** | **0.7350** | 3 | **1** | **+2** |
+| **Entity_C** | 0.620 | 0.5650 | 2 | 2 | 0 |
+
+* **Interactive Google Colab Notebook:** [Run Rank-Shift Audit PoC](https://colab.research.google.com/drive/1Ih0SEHQnNGshP97URTa4kFWaaY3zLuxi?usp=sharing)
+* **Executable Script:** `decision_poc.py`
+
+> **Status Notice:** This script demonstrates the specification-defined mathematical logic of the OIP framework using a synthetic dataset ($N=3$). Empirical validation ($E1$-$E3$) remains pending.
