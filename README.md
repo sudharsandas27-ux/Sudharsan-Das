@@ -10,13 +10,13 @@ This section is an illustrative concept demonstration of the OIP decision-logic 
 
 ### Demonstration Output
 
-Entity ID | OIP Blind Score (F1) | OIP Adjusted SIS (F2) | Credential Rank | OIP Blind Rank | Rank Shift (ΔR)
---- | --- | --- | --- | --- | ---
-Entity_A | 0.385 | 0.0783 | 1 | 3 | -2
-Entity_B | 0.814 | 0.7350 | 3 | 1 | +2
-Entity_C | 0.620 | 0.5650 | 2 | 2 | 0
+| Entity ID | OIP Blind Score (F1) | OIP Adjusted SIS (F2) | Credential Rank | OIP Blind Rank | Rank Shift (ΔR) |
+|---|---:|---:|---:|---:|---:|
+| Entity_A | 0.385 | 0.0783 | 1 | 3 | -2 |
+| Entity_B | 0.814 | 0.7350 | 3 | 1 | +2 |
+| Entity_C | 0.620 | 0.5650 | 2 | 2 | 0 |
 
-Interactive Google Colab: "Run Rank-Shift Audit PoC"
+Interactive demonstration: Run Rank-Shift Audit PoC
 
 Executable script: `decision_poc.py`
 
@@ -30,11 +30,11 @@ The v1.0.28 evaluation notebook explored the OIP scoring structure using a synth
 
 ### Simulation Summary
 
-Metric | Baseline | OIP v1.0.28 | Difference
---- | --- | --- | ---
-Synthetic records | 54,808 | 54,808 | Same generated cohort
-Top-10% promotion yield | 12.66% | 20.62% | +7.96 percentage points
-Reported simulation test | — | — | p = 3.59e-29
+| Metric | Baseline | OIP v1.0.28 | Difference |
+|---|---:|---:|---:|
+| Synthetic records | 54,808 | 54,808 | Same generated cohort |
+| Top-10% promotion yield | 12.66% | 20.62% | +7.96 percentage points |
+| Reported simulation test | — | — | p = 3.59e-29 |
 
 ### Data Provenance Clarification
 
@@ -44,7 +44,7 @@ The `is_promoted` outcome was also synthetically generated within the simulation
 
 Therefore, the reported +7.96 percentage-point difference is classified as a synthetic decision-logic simulation, not independent empirical evidence.
 
-Important: The synthetic outcome was generated from variables that overlap with the variables used in the OIP ranking. This creates a circular or self-reinforcing simulation structure.
+The synthetic outcome was generated from variables that overlap with the variables used in the OIP ranking. This creates a circular or self-reinforcing simulation structure.
 
 The resulting lift and statistical significance do not establish causal efficacy, production superiority, or real-world validity.
 
@@ -177,6 +177,70 @@ The next phase will focus on deeper documentary and real-data cross-checks using
 
 ---
 
+## OIP v1.0.33 — ESS4 Canonical Audit
+
+OIP v1.0.33 applies the evidence-first, fail-closed audit methodology to the Ethiopia Socioeconomic Survey 2018–2019 (ESS4).
+
+The audit examined whether the available dataset structure and documentary evidence were sufficient to support authorized operationalization of the required OIP constructs and an outcome suitable for downstream empirical evaluation.
+
+The audit covered:
+
+- Dataset provenance and source integrity
+- Variable metadata and value-label evidence
+- Identifier candidate discovery
+- Structural uniqueness and co-occurrence checks
+- Documentary questionnaire and metadata evidence
+- Construct evidence routing
+- GFL, IDS and AML evidence states
+- Outcome evidence
+- Operationalization authorization
+- Qualification and release gates
+- Final audit manifest verification
+
+The audit preserved the distinction between structural observations, documentary evidence, construct authorization and empirical validation.
+
+Structural uniqueness was not treated as semantic identifier authorization.
+
+Literal documentary search hits were not treated as semantic construct verification.
+
+Candidate evidence was not automatically treated as construct approval.
+
+### Final Qualification State
+
+`PROVENANCE_INTEGRITY = ESTABLISHED`
+
+`TEMPORAL_VALIDITY = NOT_ESTABLISHED`
+
+`CONSTRUCT_MEASUREMENT_EVIDENCE = NOT_ESTABLISHED`
+
+`OUTCOME_INDEPENDENCE = NOT_ESTABLISHED`
+
+`NO_SYNTHETIC_OUTCOME_CONSTRUCTION = NOT_ESTABLISHED`
+
+`LEAKAGE_CONTROL = NOT_ESTABLISHED`
+
+### Final Release State
+
+`FAIL_CLOSED_QUALIFICATION_NOT_ESTABLISHED`
+
+`RELEASE_AS_FAIL_CLOSED_AUDIT_ONLY`
+
+The audit therefore did not proceed to unsupported construct scoring or empirical validation.
+
+Note: The `NO_SYNTHETIC_OUTCOME_CONSTRUCTION` gate remained `NOT_ESTABLISHED` because the upstream construct authorization gate closed before outcome construction was reached. This does not indicate that a synthetic outcome was created.
+
+The result should be interpreted as an evidence boundary for the audited ESS4 data and documentation, not as proof that the OIP constructs are universally unmeasurable across secondary datasets.
+
+### Audit Artifact
+
+Executable audit notebook:
+
+`coip-v1-0-33-ess4-canonical-audit-2.ipynb`
+
+The corresponding public computational audit record is available through the project repository and associated public notebook record.
+
+---
+
 ## Evidence-First Principle
 
 Across the OIP evaluation work, the methodology follows a simple rule:
@@ -210,9 +274,24 @@ Empirical claims require sufficient documented evidence, valid operationalizatio
 
 ---
 
+## Current Research Direction
+
+The OIP research line currently includes four dataset-level audits:
+
+- v1.0.29 — Bangladesh Environmental Mobility Panel (BEMP)
+- v1.0.31 — Malawi Integrated Household Panel Survey (IHPS)
+- v1.0.32 — Uganda National Panel Survey (UNPS)
+- v1.0.33 — Ethiopia Socioeconomic Survey (ESS4)
+
+Across these audits, the required evidence for authorized construct operationalization was not established and the pipelines remained fail-closed.
+
+The next stage, v1.0.34, will document the descriptive pattern across these audits and define the resulting evidence boundary without claiming universal unmeasurability of the documented constructs across secondary datasets.
+
+---
+
 ## Current Position
 
-OIP v1.0.32 provides a documented evidence-first audit record using real UNPS 2019/20 data.
+OIP v1.0.33 provides a documented evidence-first audit record using real ESS4 2018–2019 data and associated documentary sources.
 
 The current result does not claim that OIP has been empirically validated.
 
