@@ -12,35 +12,90 @@ Where required evidence is not established, the process remains fail-closed.
 
 ---
 
-# OIP v1.0.35 — Evidence Reconciliation & Archival Freeze
+# OIP v1.0.36 — Tanzania NPS Wave 4 Qualification Audit
 
-OIP v1.0.35 is the current public archival release of the OIP research lineage.
+OIP v1.0.36 applies the frozen OIP source-definition and measurement-criteria sequence to the Tanzania National Panel Survey 2014–2015, Wave 4.
 
-This release is a reconciliation and archival freeze, not a new empirical evaluation.
+This release is a dataset qualification audit followed by an archival freeze. It is not an empirical validation.
 
-It preserves the documented evidence boundaries of four dataset-level audit records under the OIP v1.0.30 normative protocol:
+## Audit Scope
 
-- BEMP
-- Malawi IHPS
-- Uganda UNPS
-- Ethiopia ESS4
+The Tanzania NPS Wave 4 source package contained:
 
-## Frozen State
+- 83 source artifacts
+- 75 Stata files
+- 8 PDFs
+- 1,152 documentary pages extracted
+- 1,792 unique variable names
+- 7 identifier candidates
+- 27,214 rows observed during identifier diagnostics
 
-- 12 upstream archival artifacts
-- 4 registered unresolved conflicts
-- 4 open governance items
-- No construct authorization
-- No score authorization
-- No outcome authorization
-- No downstream empirical evaluation
-- C12 manifest: **FROZEN**
+These quantities describe the audited source environment and diagnostic processing. They do not constitute authorization of constructs, identifiers, outcomes, scores or empirical validity.
 
-## Frozen Manifest SHA-256
+## Final Qualification State
 
-`c18147bec6afe3a5b98c601a146bbeb645b983eafe46cac013e4b0ea2b77222b`
+- GFL: `PENDING_EVIDENCE`
+- IDS: `PENDING_EVIDENCE`
+- AML: `PENDING_EVIDENCE`
+- Construct authorization: **NONE**
+- Identifier authorization: **NONE**
+- Outcome authorization: **NONE**
+- Analytical cohort: **NOT CREATED**
+- Score: **NOT PERFORMED**
+- Empirical evaluation: **NOT PERFORMED**
 
-## Dataset Audit Lineage
+### Final Qualification
+
+`FAIL_CLOSED_QUALIFICATION_NOT_ESTABLISHED`
+
+### Release Boundary
+
+`AUDIT_ONLY / FAIL_CLOSED`
+
+No unsupported proxy substitution, silent imputation, synthetic outcome, random fallback or post-hoc tuning was used.
+
+---
+
+# C15 — Archival Freeze
+
+C15 completed the archival integrity check for C01–C14.
+
+- Expected C01–C14: 14
+- Found C01–C14: 14
+- Missing cells: 0
+- JSON read errors: 0
+- Artifacts hashed: 28
+- Upstream integrity check: `PASS`
+- C15 status: `ARCHIVAL_FREEZE_PASS`
+
+The C14 `UNRESOLVED` label is preserved in the original artifact. C15 records `PENDING_EVIDENCE` for frozen-vocabulary archival comparison.
+
+## C15 Manifest SHA-256
+
+`946b02c745d7e37d16885da31eee8b372699378344c25be95990973d5d80faf2`
+
+C15 is an archival control step. It introduces no new construct, score, outcome, evaluation or empirical claim.
+
+---
+
+# Claim Discipline
+
+This release does not establish:
+
+- Empirical validity
+- Predictive validity
+- Causal validity
+- Universal validity
+- Superiority of OIP
+- Universal unmeasurability of the documented constructs
+
+Unresolved evidence remains unresolved.
+
+> No evidence, no operationalization.
+
+---
+
+# Dataset Audit Lineage
 
 **v1.0.29 — BEMP**  
 Fail-closed audit. The supplied notebook preserves the audit logic, but its executed final runtime state is not independently reconstructible from the supplied source set.
@@ -57,48 +112,42 @@ Fail-closed audit with unresolved artifact and identifier evidence conflicts pre
 **v1.0.34 — Four-Dataset Synthesis**  
 Descriptive evidence-boundary synthesis. Not a fifth dataset audit and not an empirical validation.
 
-## v1.0.28 Historical Record
+**v1.0.35 — Evidence Reconciliation & Archival Freeze**  
+Reconciliation and archival freeze of the documented evidence boundaries of the preceding dataset-level audit lineage.
 
-The v1.0.28 lineage contains both a blind decision-logic demonstration and a historical evaluation record.
+**v1.0.36 — Tanzania NPS Wave 4**  
+Dataset qualification audit conducted under the frozen source-definition and measurement-criteria sequence, followed by archival freeze.
 
-The current archival record does not treat v1.0.28 as independent current empirical validation. Its provenance and classification relationship remains subject to reconciliation.
+---
 
-## v1.0.27 and v1.0.26
+# Historical Framework Record
+
+## v1.0.28
+
+The v1.0.28 lineage contains a historical evaluation record.
+
+The current archival record does not treat v1.0.28 as independent current empirical validation. Its provenance and historical classification relationship remains subject to reconciliation.
+
+## v1.0.27
 
 v1.0.27 documents mathematical provenance and specification-level formulas.
 
+## v1.0.26
+
 v1.0.26 contains the initial framework and multiple formula presentations. The later normative protocol requires explicit version locking rather than silently selecting between conflicting formulations.
 
-## Claim Discipline
+---
 
-This release does not establish:
+# Public Archival Record
 
-- Empirical validity
-- Predictive validity
-- Causal validity
-- Universal validity
-- Superiority of OIP
-- Universal unmeasurability of the documented constructs
+Kaggle:
 
-Unresolved evidence remains unresolved.
+https://www.kaggle.com/code/sudharsandas27/oip-v1-0-36-tanzania-nps-wave-4-step-3-qualifi
 
-No evidence, no operationalization.
+---
 
-## Correction Note
-
-A separate correction note documents an auxiliary diagnostic schema mismatch involving the C10 field `governance_boundary`.
-
-Direct verification established that the actual C10 schema contains `governance` and does not contain `governance_boundary`.
-
-The correction note does not modify or re-run the frozen C12 manifest.
-
-## Public Archival Record
-
-Kaggle:  
-https://www.kaggle.com/code/sudharsandas27/oip-v1-0-35-evidence-reconciliation-archival-f
-
-## Citation
+# Citation
 
 Sudharsan Das.  
-**Organic Intelligence Protocol (OIP) v1.0.35 — Evidence Reconciliation & Archival Freeze.**  
+**Organic Intelligence Protocol (OIP) v1.0.36 — Tanzania NPS Wave 4 Qualification Audit.**  
 2026.
