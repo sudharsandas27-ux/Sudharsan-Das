@@ -1,0 +1,1815 @@
+{
+  "protocol": "OIP v0.2.0 Baseline Verification",
+  "artifact_type": "test_result_export",
+  "created_utc": "2026-10-25T06:02:17.985042+00:00",
+  "planned_unique_test_records": 114,
+  "supplemental_core_reason_records": 14,
+  "total_exported_rows": 128,
+  "note": "Core_Reason results are supplemental and included exactly once. This cell exports existing results and does not rerun decision tests.",
+  "release_status": "RESEARCH-STAGE ONLY",
+  "production_or_scientific_approval": "NOT GRANTED",
+  "section_summary": {
+    "Core": {
+      "records": 14,
+      "status_counts": {
+        "PASS": 14
+      }
+    },
+    "Edge": {
+      "records": 8,
+      "status_counts": {
+        "PASS": 8
+      }
+    },
+    "Validation": {
+      "records": 5,
+      "status_counts": {
+        "PASS": 5
+      }
+    },
+    "Output_Contract": {
+      "records": 5,
+      "status_counts": {
+        "PASS": 5
+      }
+    },
+    "Immutability": {
+      "records": 3,
+      "status_counts": {
+        "PASS": 3
+      }
+    },
+    "Configuration": {
+      "records": 4,
+      "status_counts": {
+        "PASS": 4
+      }
+    },
+    "Precedence": {
+      "records": 3,
+      "status_counts": {
+        "PASS": 3
+      }
+    },
+    "Exhaustive_Matrix": {
+      "records": 72,
+      "status_counts": {
+        "PASS": 72
+      }
+    },
+    "Core_Reason": {
+      "records": 14,
+      "status_counts": {
+        "PASS": 14
+      }
+    }
+  },
+  "records": [
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T01",
+        "scenario": "Complete file with successful review",
+        "input_json": "{\"case_id\": \"T01\", \"evidence_conflict\": false, \"evidence_status\": \"PRESENT\", \"prior_state\": \"NOT_ASSESSED\", \"review_result\": \"PASSED\"}",
+        "expected_state": "APPROVED",
+        "actual_state": "APPROVED",
+        "actual_reason": "All demo approval conditions are satisfied.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T02",
+        "scenario": "Conflicting financial documents",
+        "input_json": "{\"case_id\": \"T02\", \"evidence_conflict\": true, \"evidence_status\": \"PRESENT\", \"prior_state\": \"NOT_ASSESSED\", \"review_result\": \"PASSED\"}",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "actual_reason": "Contradictory evidence declared.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T03",
+        "scenario": "Required medical report missing",
+        "input_json": "{\"case_id\": \"T03\", \"evidence_conflict\": false, \"evidence_status\": \"MISSING\", \"prior_state\": \"NOT_ASSESSED\", \"review_result\": \"PASSED\"}",
+        "expected_state": "PENDING_EVIDENCE",
+        "actual_state": "PENDING_EVIDENCE",
+        "actual_reason": "Evidence is missing or unresolved.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T04",
+        "scenario": "Evidence status remains unknown",
+        "input_json": "{\"case_id\": \"T04\", \"evidence_conflict\": false, \"evidence_status\": \"UNKNOWN\", \"prior_state\": \"NOT_ASSESSED\", \"review_result\": \"PASSED\"}",
+        "expected_state": "PENDING_EVIDENCE",
+        "actual_state": "PENDING_EVIDENCE",
+        "actual_reason": "Evidence is missing or unresolved.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T05",
+        "scenario": "Infrastructure safety review failed",
+        "input_json": "{\"case_id\": \"T05\", \"evidence_conflict\": false, \"evidence_status\": \"PRESENT\", \"prior_state\": \"NOT_ASSESSED\", \"review_result\": \"FAILED\"}",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "actual_reason": "Failed review: v0.2.0 demo policy.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T06",
+        "scenario": "Review not yet completed",
+        "input_json": "{\"case_id\": \"T06\", \"evidence_conflict\": false, \"evidence_status\": \"PRESENT\", \"prior_state\": \"NOT_ASSESSED\", \"review_result\": \"NOT_REVIEWED\"}",
+        "expected_state": "PENDING_EVIDENCE",
+        "actual_state": "PENDING_EVIDENCE",
+        "actual_reason": "Review has not been completed.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T07",
+        "scenario": "Evidence missing and review incomplete",
+        "input_json": "{\"case_id\": \"T07\", \"evidence_conflict\": false, \"evidence_status\": \"MISSING\", \"prior_state\": \"NOT_ASSESSED\", \"review_result\": \"NOT_REVIEWED\"}",
+        "expected_state": "PENDING_EVIDENCE",
+        "actual_state": "PENDING_EVIDENCE",
+        "actual_reason": "Evidence is missing or unresolved.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T08",
+        "scenario": "Evidence missing and review failed",
+        "input_json": "{\"case_id\": \"T08\", \"evidence_conflict\": false, \"evidence_status\": \"MISSING\", \"prior_state\": \"NOT_ASSESSED\", \"review_result\": \"FAILED\"}",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "actual_reason": "Failed review: v0.2.0 demo policy.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T09",
+        "scenario": "Unknown evidence and failed review",
+        "input_json": "{\"case_id\": \"T09\", \"evidence_conflict\": false, \"evidence_status\": \"UNKNOWN\", \"prior_state\": \"NOT_ASSESSED\", \"review_result\": \"FAILED\"}",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "actual_reason": "Failed review: v0.2.0 demo policy.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T10",
+        "scenario": "Invalid evidence status",
+        "input_json": "{\"case_id\": \"T10\", \"evidence_conflict\": false, \"evidence_status\": \"INVALID_STATUS\", \"prior_state\": \"NOT_ASSESSED\", \"review_result\": \"PASSED\"}",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "actual_reason": "Invalid evidence_status.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T11",
+        "scenario": "Required review field missing",
+        "input_json": "{\"case_id\": \"T11\", \"evidence_conflict\": false, \"evidence_status\": \"PRESENT\", \"prior_state\": \"APPROVED\"}",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "actual_reason": "Missing required fields: ['review_result']",
+        "actual_prior_state": "APPROVED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T12",
+        "scenario": "Evidence conflict and failed review",
+        "input_json": "{\"case_id\": \"T12\", \"evidence_conflict\": true, \"evidence_status\": \"PRESENT\", \"prior_state\": \"NOT_ASSESSED\", \"review_result\": \"FAILED\"}",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "actual_reason": "Contradictory evidence declared.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T13",
+        "scenario": "Repeat the same valid input",
+        "input_json": "{\"case_id\": \"T13\", \"evidence_conflict\": false, \"evidence_status\": \"PRESENT\", \"prior_state\": \"NOT_ASSESSED\", \"review_result\": \"PASSED\"}",
+        "expected_state": "APPROVED",
+        "actual_state": "APPROVED",
+        "actual_reason": "All demo approval conditions are satisfied.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core",
+      "result": {
+        "test_id": "T14",
+        "scenario": "Previously blocked case",
+        "input_json": "{\"case_id\": \"T14\", \"evidence_conflict\": false, \"evidence_status\": \"PRESENT\", \"prior_state\": \"BLOCKED\", \"review_result\": \"PASSED\"}",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "actual_reason": "Previous BLOCKED state retained by demo policy.",
+        "actual_prior_state": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Edge",
+      "result": {
+        "test_id": "E01",
+        "scenario": "Whitespace-only case ID",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "actual_reason": "case_id must be a non-empty string.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Edge",
+      "result": {
+        "test_id": "E02",
+        "scenario": "Empty case ID",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "actual_reason": "case_id must be a non-empty string.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Edge",
+      "result": {
+        "test_id": "E03",
+        "scenario": "Integer used as case ID",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "actual_reason": "case_id must be a non-empty string.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Edge",
+      "result": {
+        "test_id": "E04",
+        "scenario": "Conflict with previous BLOCKED state",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "actual_reason": "Contradictory evidence declared.",
+        "actual_prior_state": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Edge",
+      "result": {
+        "test_id": "E05",
+        "scenario": "Failed review with previous BLOCKED state",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "actual_reason": "Previous BLOCKED state retained by demo policy.",
+        "actual_prior_state": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Edge",
+      "result": {
+        "test_id": "E06",
+        "scenario": "Unknown evidence and unreviewed case",
+        "expected_state": "PENDING_EVIDENCE",
+        "actual_state": "PENDING_EVIDENCE",
+        "actual_reason": "Evidence is missing or unresolved.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Edge",
+      "result": {
+        "test_id": "E07",
+        "scenario": "Boolean used as evidence conflict",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "actual_reason": "evidence_conflict must be True or False.",
+        "actual_prior_state": "NOT_ASSESSED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Edge",
+      "result": {
+        "test_id": "E08",
+        "scenario": "Invalid prior state",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "actual_reason": "Invalid prior_state.",
+        "actual_prior_state": null,
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Validation",
+      "result": {
+        "test_id": "V01",
+        "scenario": "Input is None",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "actual_reason": "Input must be a dictionary.",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Validation",
+      "result": {
+        "test_id": "V02",
+        "scenario": "Input is a list",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "actual_reason": "Input must be a dictionary.",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Validation",
+      "result": {
+        "test_id": "V03",
+        "scenario": "Input is a string",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "actual_reason": "Input must be a dictionary.",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Validation",
+      "result": {
+        "test_id": "V04",
+        "scenario": "Unexpected extra field",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "actual_reason": "Unexpected fields: ['unexpected_field']",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Validation",
+      "result": {
+        "test_id": "V05",
+        "scenario": "Missing required field",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "actual_reason": "Missing required fields: ['evidence_conflict']",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Output_Contract",
+      "result": {
+        "test_id": "O01",
+        "scenario": "Valid approval output contract",
+        "expected_state": "APPROVED",
+        "actual_state": "APPROVED",
+        "keys_match": true,
+        "missing_keys": [],
+        "extra_keys": [],
+        "types_match": true,
+        "state_match": true,
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Output_Contract",
+      "result": {
+        "test_id": "O02",
+        "scenario": "Blocked output contract",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "keys_match": true,
+        "missing_keys": [],
+        "extra_keys": [],
+        "types_match": true,
+        "state_match": true,
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Output_Contract",
+      "result": {
+        "test_id": "O03",
+        "scenario": "Pending evidence output contract",
+        "expected_state": "PENDING_EVIDENCE",
+        "actual_state": "PENDING_EVIDENCE",
+        "keys_match": true,
+        "missing_keys": [],
+        "extra_keys": [],
+        "types_match": true,
+        "state_match": true,
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Output_Contract",
+      "result": {
+        "test_id": "O04",
+        "scenario": "Invalid input output contract",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "keys_match": true,
+        "missing_keys": [],
+        "extra_keys": [],
+        "types_match": true,
+        "state_match": true,
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Output_Contract",
+      "result": {
+        "test_id": "O05",
+        "scenario": "Missing field output contract",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "keys_match": true,
+        "missing_keys": [],
+        "extra_keys": [],
+        "types_match": true,
+        "state_match": true,
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Immutability",
+      "result": {
+        "test_id": "I01",
+        "scenario": "Input remains unchanged after approval decision",
+        "expected_state": "APPROVED",
+        "actual_state": "APPROVED",
+        "input_unchanged": true,
+        "state_match": true,
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Immutability",
+      "result": {
+        "test_id": "I02",
+        "scenario": "Input remains unchanged after blocked decision",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "input_unchanged": true,
+        "state_match": true,
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Immutability",
+      "result": {
+        "test_id": "I03",
+        "scenario": "Input remains unchanged after invalid input decision",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "input_unchanged": true,
+        "state_match": true,
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Configuration",
+      "result": {
+        "config_name": "FIELDS",
+        "unchanged": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Configuration",
+      "result": {
+        "config_name": "EVIDENCE_VALUES",
+        "unchanged": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Configuration",
+      "result": {
+        "config_name": "REVIEW_VALUES",
+        "unchanged": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Configuration",
+      "result": {
+        "config_name": "STATE_VALUES",
+        "unchanged": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Precedence",
+      "result": {
+        "test_id": "P01",
+        "scenario": "Conflict outranks prior BLOCKED and FAILED review",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "expected_reason": "Contradictory evidence declared.",
+        "actual_reason": "Contradictory evidence declared.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Precedence",
+      "result": {
+        "test_id": "P02",
+        "scenario": "Prior BLOCKED outranks FAILED review",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "expected_reason": "Previous BLOCKED state retained by demo policy.",
+        "actual_reason": "Previous BLOCKED state retained by demo policy.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Precedence",
+      "result": {
+        "test_id": "P03",
+        "scenario": "FAILED review outranks missing evidence",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "expected_reason": "Failed review: v0.2.0 demo policy.",
+        "actual_reason": "Failed review: v0.2.0 demo policy.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_001",
+        "evidence": "PRESENT",
+        "review": "PASSED",
+        "conflict": false,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "APPROVED",
+        "actual": "APPROVED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_002",
+        "evidence": "PRESENT",
+        "review": "PASSED",
+        "conflict": false,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "APPROVED",
+        "actual": "APPROVED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_003",
+        "evidence": "PRESENT",
+        "review": "PASSED",
+        "conflict": false,
+        "prior_state": "APPROVED",
+        "expected": "APPROVED",
+        "actual": "APPROVED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_004",
+        "evidence": "PRESENT",
+        "review": "PASSED",
+        "conflict": false,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_005",
+        "evidence": "PRESENT",
+        "review": "PASSED",
+        "conflict": true,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_006",
+        "evidence": "PRESENT",
+        "review": "PASSED",
+        "conflict": true,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_007",
+        "evidence": "PRESENT",
+        "review": "PASSED",
+        "conflict": true,
+        "prior_state": "APPROVED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_008",
+        "evidence": "PRESENT",
+        "review": "PASSED",
+        "conflict": true,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_009",
+        "evidence": "PRESENT",
+        "review": "FAILED",
+        "conflict": false,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_010",
+        "evidence": "PRESENT",
+        "review": "FAILED",
+        "conflict": false,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_011",
+        "evidence": "PRESENT",
+        "review": "FAILED",
+        "conflict": false,
+        "prior_state": "APPROVED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_012",
+        "evidence": "PRESENT",
+        "review": "FAILED",
+        "conflict": false,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_013",
+        "evidence": "PRESENT",
+        "review": "FAILED",
+        "conflict": true,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_014",
+        "evidence": "PRESENT",
+        "review": "FAILED",
+        "conflict": true,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_015",
+        "evidence": "PRESENT",
+        "review": "FAILED",
+        "conflict": true,
+        "prior_state": "APPROVED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_016",
+        "evidence": "PRESENT",
+        "review": "FAILED",
+        "conflict": true,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_017",
+        "evidence": "PRESENT",
+        "review": "NOT_REVIEWED",
+        "conflict": false,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_018",
+        "evidence": "PRESENT",
+        "review": "NOT_REVIEWED",
+        "conflict": false,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_019",
+        "evidence": "PRESENT",
+        "review": "NOT_REVIEWED",
+        "conflict": false,
+        "prior_state": "APPROVED",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_020",
+        "evidence": "PRESENT",
+        "review": "NOT_REVIEWED",
+        "conflict": false,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_021",
+        "evidence": "PRESENT",
+        "review": "NOT_REVIEWED",
+        "conflict": true,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_022",
+        "evidence": "PRESENT",
+        "review": "NOT_REVIEWED",
+        "conflict": true,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_023",
+        "evidence": "PRESENT",
+        "review": "NOT_REVIEWED",
+        "conflict": true,
+        "prior_state": "APPROVED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_024",
+        "evidence": "PRESENT",
+        "review": "NOT_REVIEWED",
+        "conflict": true,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_025",
+        "evidence": "MISSING",
+        "review": "PASSED",
+        "conflict": false,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_026",
+        "evidence": "MISSING",
+        "review": "PASSED",
+        "conflict": false,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_027",
+        "evidence": "MISSING",
+        "review": "PASSED",
+        "conflict": false,
+        "prior_state": "APPROVED",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_028",
+        "evidence": "MISSING",
+        "review": "PASSED",
+        "conflict": false,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_029",
+        "evidence": "MISSING",
+        "review": "PASSED",
+        "conflict": true,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_030",
+        "evidence": "MISSING",
+        "review": "PASSED",
+        "conflict": true,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_031",
+        "evidence": "MISSING",
+        "review": "PASSED",
+        "conflict": true,
+        "prior_state": "APPROVED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_032",
+        "evidence": "MISSING",
+        "review": "PASSED",
+        "conflict": true,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_033",
+        "evidence": "MISSING",
+        "review": "FAILED",
+        "conflict": false,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_034",
+        "evidence": "MISSING",
+        "review": "FAILED",
+        "conflict": false,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_035",
+        "evidence": "MISSING",
+        "review": "FAILED",
+        "conflict": false,
+        "prior_state": "APPROVED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_036",
+        "evidence": "MISSING",
+        "review": "FAILED",
+        "conflict": false,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_037",
+        "evidence": "MISSING",
+        "review": "FAILED",
+        "conflict": true,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_038",
+        "evidence": "MISSING",
+        "review": "FAILED",
+        "conflict": true,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_039",
+        "evidence": "MISSING",
+        "review": "FAILED",
+        "conflict": true,
+        "prior_state": "APPROVED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_040",
+        "evidence": "MISSING",
+        "review": "FAILED",
+        "conflict": true,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_041",
+        "evidence": "MISSING",
+        "review": "NOT_REVIEWED",
+        "conflict": false,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_042",
+        "evidence": "MISSING",
+        "review": "NOT_REVIEWED",
+        "conflict": false,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_043",
+        "evidence": "MISSING",
+        "review": "NOT_REVIEWED",
+        "conflict": false,
+        "prior_state": "APPROVED",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_044",
+        "evidence": "MISSING",
+        "review": "NOT_REVIEWED",
+        "conflict": false,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_045",
+        "evidence": "MISSING",
+        "review": "NOT_REVIEWED",
+        "conflict": true,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_046",
+        "evidence": "MISSING",
+        "review": "NOT_REVIEWED",
+        "conflict": true,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_047",
+        "evidence": "MISSING",
+        "review": "NOT_REVIEWED",
+        "conflict": true,
+        "prior_state": "APPROVED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_048",
+        "evidence": "MISSING",
+        "review": "NOT_REVIEWED",
+        "conflict": true,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_049",
+        "evidence": "UNKNOWN",
+        "review": "PASSED",
+        "conflict": false,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_050",
+        "evidence": "UNKNOWN",
+        "review": "PASSED",
+        "conflict": false,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_051",
+        "evidence": "UNKNOWN",
+        "review": "PASSED",
+        "conflict": false,
+        "prior_state": "APPROVED",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_052",
+        "evidence": "UNKNOWN",
+        "review": "PASSED",
+        "conflict": false,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_053",
+        "evidence": "UNKNOWN",
+        "review": "PASSED",
+        "conflict": true,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_054",
+        "evidence": "UNKNOWN",
+        "review": "PASSED",
+        "conflict": true,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_055",
+        "evidence": "UNKNOWN",
+        "review": "PASSED",
+        "conflict": true,
+        "prior_state": "APPROVED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_056",
+        "evidence": "UNKNOWN",
+        "review": "PASSED",
+        "conflict": true,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_057",
+        "evidence": "UNKNOWN",
+        "review": "FAILED",
+        "conflict": false,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_058",
+        "evidence": "UNKNOWN",
+        "review": "FAILED",
+        "conflict": false,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_059",
+        "evidence": "UNKNOWN",
+        "review": "FAILED",
+        "conflict": false,
+        "prior_state": "APPROVED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_060",
+        "evidence": "UNKNOWN",
+        "review": "FAILED",
+        "conflict": false,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_061",
+        "evidence": "UNKNOWN",
+        "review": "FAILED",
+        "conflict": true,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_062",
+        "evidence": "UNKNOWN",
+        "review": "FAILED",
+        "conflict": true,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_063",
+        "evidence": "UNKNOWN",
+        "review": "FAILED",
+        "conflict": true,
+        "prior_state": "APPROVED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_064",
+        "evidence": "UNKNOWN",
+        "review": "FAILED",
+        "conflict": true,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_065",
+        "evidence": "UNKNOWN",
+        "review": "NOT_REVIEWED",
+        "conflict": false,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_066",
+        "evidence": "UNKNOWN",
+        "review": "NOT_REVIEWED",
+        "conflict": false,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_067",
+        "evidence": "UNKNOWN",
+        "review": "NOT_REVIEWED",
+        "conflict": false,
+        "prior_state": "APPROVED",
+        "expected": "PENDING_EVIDENCE",
+        "actual": "PENDING_EVIDENCE",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_068",
+        "evidence": "UNKNOWN",
+        "review": "NOT_REVIEWED",
+        "conflict": false,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_069",
+        "evidence": "UNKNOWN",
+        "review": "NOT_REVIEWED",
+        "conflict": true,
+        "prior_state": "NOT_ASSESSED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_070",
+        "evidence": "UNKNOWN",
+        "review": "NOT_REVIEWED",
+        "conflict": true,
+        "prior_state": "PENDING_EVIDENCE",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_071",
+        "evidence": "UNKNOWN",
+        "review": "NOT_REVIEWED",
+        "conflict": true,
+        "prior_state": "APPROVED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Exhaustive_Matrix",
+      "result": {
+        "case_id": "MATRIX_072",
+        "evidence": "UNKNOWN",
+        "review": "NOT_REVIEWED",
+        "conflict": true,
+        "prior_state": "BLOCKED",
+        "expected": "BLOCKED",
+        "actual": "BLOCKED",
+        "status": "PASS",
+        "error": null
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T01",
+        "expected_state": "APPROVED",
+        "actual_state": "APPROVED",
+        "expected_reason": "All demo approval conditions are satisfied.",
+        "actual_reason": "All demo approval conditions are satisfied.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T02",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "expected_reason": "Contradictory evidence declared.",
+        "actual_reason": "Contradictory evidence declared.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T03",
+        "expected_state": "PENDING_EVIDENCE",
+        "actual_state": "PENDING_EVIDENCE",
+        "expected_reason": "Evidence is missing or unresolved.",
+        "actual_reason": "Evidence is missing or unresolved.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T04",
+        "expected_state": "PENDING_EVIDENCE",
+        "actual_state": "PENDING_EVIDENCE",
+        "expected_reason": "Evidence is missing or unresolved.",
+        "actual_reason": "Evidence is missing or unresolved.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T05",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "expected_reason": "Failed review: v0.2.0 demo policy.",
+        "actual_reason": "Failed review: v0.2.0 demo policy.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T06",
+        "expected_state": "PENDING_EVIDENCE",
+        "actual_state": "PENDING_EVIDENCE",
+        "expected_reason": "Review has not been completed.",
+        "actual_reason": "Review has not been completed.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T07",
+        "expected_state": "PENDING_EVIDENCE",
+        "actual_state": "PENDING_EVIDENCE",
+        "expected_reason": "Evidence is missing or unresolved.",
+        "actual_reason": "Evidence is missing or unresolved.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T08",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "expected_reason": "Failed review: v0.2.0 demo policy.",
+        "actual_reason": "Failed review: v0.2.0 demo policy.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T09",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "expected_reason": "Failed review: v0.2.0 demo policy.",
+        "actual_reason": "Failed review: v0.2.0 demo policy.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T10",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "expected_reason": "Invalid evidence_status.",
+        "actual_reason": "Invalid evidence_status.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T11",
+        "expected_state": "INVALID_INPUT",
+        "actual_state": "INVALID_INPUT",
+        "expected_reason": "Missing required fields: ['review_result']",
+        "actual_reason": "Missing required fields: ['review_result']",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T12",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "expected_reason": "Contradictory evidence declared.",
+        "actual_reason": "Contradictory evidence declared.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T13",
+        "expected_state": "APPROVED",
+        "actual_state": "APPROVED",
+        "expected_reason": "All demo approval conditions are satisfied.",
+        "actual_reason": "All demo approval conditions are satisfied.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    },
+    {
+      "section": "Core_Reason",
+      "result": {
+        "test_id": "T14",
+        "expected_state": "BLOCKED",
+        "actual_state": "BLOCKED",
+        "expected_reason": "Previous BLOCKED state retained by demo policy.",
+        "actual_reason": "Previous BLOCKED state retained by demo policy.",
+        "state_match": true,
+        "reason_match": true,
+        "status": "PASS"
+      }
+    }
+  ]
+}
