@@ -241,3 +241,56 @@ Tripura, India
 License
 
 Refer to the repository's license file for the applicable licensing terms.
+---
+
+OIP v1.0.40 — Consolidated Master Technical Reference
+
+Author: Sudharsan Das
+Role: Independent Systems Researcher | Architect of the Organic Intelligence Protocol (OIP)
+Location: Tripura, India
+Release Date: 26 October 2026
+Status: Research-stage technical reference
+
+Overview
+
+OIP v1.0.40 consolidates the documented methodology, mathematical notation, evidence hierarchy, dataset audit lineage, software verification records, and claim limitations associated with the Organic Intelligence Protocol (OIP).
+
+The document emphasizes an evidence-first, fail-closed approach to research and analytical authorization.
+
+Core Principles
+
+- Evidence must authorize measurement.
+- Measurement must authorize scoring.
+- Scoring must precede evaluation.
+- Evaluation must precede scientific claims.
+- Missing, contradictory, or insufficient evidence must not be silently replaced with assumptions.
+- Unresolved findings must remain explicitly unresolved.
+
+Research Materials
+
+The consolidated technical reference is available in the repository as:
+
+"Sudharsan_Das_OIP_v1.0.40_Master.pdf"
+
+Zenodo research record for the OIP v0.2.0 synthetic reference implementation:
+
+https://zenodo.org/records/23635920
+
+Scope and Limitations
+
+OIP remains a research-stage methodology. This document does not establish independent empirical validation, predictive or causal validity, production readiness, commercial validation, or certification as a real-world AI security system.
+
+The v0.2.0 synthetic software reference implementation is distinct from the broader v1.0.x methodology and dataset-audit lineage.
+
+Historical audit results, unresolved source conflicts, and unverified counts must be interpreted according to the qualifications documented in the technical reference.
+
+Evidence and Claim Discipline
+
+This project follows an evidence-first and fail-closed research approach. Claims should remain limited to what the available source artifacts and documented verification procedures support.
+
+Corrections and future developments should be recorded through explicit, versioned updates.
+
+---
+
+Organic Intelligence Protocol (OIP)
+Evidence first. Fail closed. Claims bounded by evidence.
