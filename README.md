@@ -15,6 +15,36 @@ When required evidence is missing, contradictory, unresolved, or not independent
 Current research position: Research-stage methodology. The presence of specifications, audits, and software tests does not independently establish scientific validity, causal validity, real-world safety, or production readiness.
 
 ---
+Latest Research Publication — OIP v1.0.40
+
+Title: OIP v1.0.40 — Research-Stage Technical Master Reference and Audit Evidence Package
+
+Author: Sudharsan Das
+Release date: 5 November 2026
+Status: Research-stage; independent scientific validation pending.
+
+Permanent Research Record:
+https://doi.org/10.5281/zenodo.23974507
+
+The Zenodo record contains four published files:
+
+1. Consolidated Technical Master Reference (PDF)
+2. PDF SHA-256 checksum
+3. Reconciled audit evidence backup (ZIP)
+4. Original source documents backup (ZIP)
+
+No Jupyter Notebook is included in this Zenodo record.
+
+The current release documents mathematical specification review, source reconciliation, software verification evidence, audit provenance, historical issues, and unresolved owner decisions.
+
+Evidence boundary: Artifact integrity and documented software-test results do not establish scientific validity, causal validity, production readiness, or commercial validation. Protocol freeze has not been authorized.
+
+This publication is a research-stage reference record, not a claim of final scientific approval.
+
+।।।।।।।
+
+
+
 
 Claim Discipline and Evidence Classification
 
