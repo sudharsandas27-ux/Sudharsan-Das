@@ -1,0 +1,51 @@
+{
+  "package": "OIP HK009 / UC004 Candidate Verification",
+  "stage": "research_stage_candidate_verification",
+  "execution_ledger": {
+    "total": 108,
+    "pass": 105,
+    "fail": 2,
+    "expected_policy_rejections": 1,
+    "reconciliation_pass": true
+  },
+  "integrity_check": {
+    "files_checked": 2,
+    "pass": 2,
+    "fail": 0,
+    "overall": "PASS"
+  },
+  "engines": {
+    "HK009": {
+      "file": "oip_hk009_candidate_engine.py",
+      "sha256": "bb2b7e7e73da48faab9e4512a7cded597827d62d5c7a577d1b0879120457b6d8"
+    },
+    "UC004": {
+      "file": "oip_uc004_hash_candidate.py",
+      "sha256": "4ca011513d537c059702fedd07602fbdfc833ee3f03db3eada5fa534e5ef0371"
+    }
+  },
+  "limitations": {
+    "empirical_validation": "NOT_ESTABLISHED",
+    "scientific_validation": "NOT_ESTABLISHED",
+    "measurement_authorization": "NOT_GRANTED",
+    "production_release": "NOT_APPROVED",
+    "engine_lock": "NOT_APPROVED",
+    "cross_runtime_canonical_serialization": "OPEN"
+  },
+  "supplemental_source_review": {
+    "probe_input": "10**400 (native Python integer)",
+    "included_in_108_execution_ledger": false,
+    "HK009": {
+      "validate_numeric": "INVALID_INPUT",
+      "calculate_score": "INVALID_INPUT",
+      "status": "OPEN_IMPLEMENTATION_GAP_UNDER_UNBOUNDED_NATIVE_INT_POLICY"
+    },
+    "UC004": {
+      "validate_hash_input": "OverflowError: int too large to convert to float",
+      "hash_same_runtime": "OverflowError propagated from input validation",
+      "status": "OPEN_IMPLEMENTATION_GAP_UNDER_UNBOUNDED_NATIVE_INT_POLICY"
+    },
+    "source_files_modified": false,
+    "ledger_totals_unchanged": true
+  }
+}

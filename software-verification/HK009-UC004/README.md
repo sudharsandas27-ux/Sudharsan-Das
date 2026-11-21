@@ -1,41 +1,23 @@
-OIP HK009–UC004 Candidate Verification
+# OIP HK009 / UC004 Candidate Evidence Package
 
-Organic Intelligence Protocol (OIP)
-Research-Stage Software Verification
+Research-stage software verification package.
 
-Overview
+Contents:
+1. oip_hk009_candidate_engine.py
+2. oip_uc004_hash_candidate.py
+3. FINAL_VERIFICATION_REPORT.md
+4. TEST_LEDGER.csv
+5. TEST_RESULTS.json
+6. SHA256SUMS.txt
+7. README.md
+8. CHANGELOG.md
 
-This directory contains the candidate software verification package for the OIP HK009 candidate engine and UC004 hashing-policy candidate.
+Scope:
+- Candidate software verification only.
+- No empirical or scientific validation established.
+- No production approval or engine lock.
+- No measurement authorization.
 
-This work records software-level testing, input validation, formula behaviour, hashing checks, and candidate file integrity verification.
+UC004 cross-runtime canonical serialization remains OPEN.
 
-Verification Summary
-
-- Total recorded test executions: 108
-- PASS: 105
-- Historical expectation mismatches: 2
-- Expected policy rejections: 1
-- Final candidate integrity check: PASS (2/2 files)
-
-The two historical numerical expectation mismatches were independently rechecked against direct arithmetic and passed the recheck. The original mismatch records remain preserved.
-
-Candidate Components
-
-- HK009 candidate engine
-- UC004 hashing-policy candidate
-
-Evidence Package
-
-The candidate package includes Python source files, test ledger, structured results, verification report, SHA-256 checksums, README, and changelog.
-
-Limitations and Status
-
-- Candidate engine approval: NOT GRANTED
-- Measurement authorization: NOT GRANTED
-- Scientific validation: NOT ESTABLISHED
-- Production authorization: NOT AUTHORIZED
-- Cross-runtime canonical serialization: OPEN
-
-Software verification does not independently establish empirical validity, scientific validity, real-world safety, or production readiness.
-
-OIP remains a research-stage methodology.
+Supplemental source-level review: a `10**400` native integer is currently not handled consistently by the candidates. HK009 returns `INVALID_INPUT`; UC004 raises `OverflowError`. This probe is outside the 108-execution ledger and is recorded as an open implementation gap in `FINAL_VERIFICATION_REPORT.md`. Candidate source files remain unchanged.
