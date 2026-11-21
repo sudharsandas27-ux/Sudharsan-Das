@@ -1,0 +1,62 @@
+OIP BigInt Repair Release 01
+
+This package contains two separate software repair candidates for BigInt-related edge cases identified in the Organic Intelligence Protocol (OIP) implementation.
+
+Repair Scope
+
+The package covers:
+
+- HK009 BigInt repair candidate
+- UC004 BigInt hashing repair candidate
+- Supplemental verification evidence
+- Combined repair reconciliation
+- Historical verification records
+
+Targeted Verification Results
+
+Candidate| Checks Passed| Failed
+HK009| 18/18| 0
+UC004| 20/20| 0
+Combined| 38/38| 0
+
+These results represent targeted supplemental repair checks only. Diagnostic probes are not counted as formal checks.
+
+Package Contents
+
+The release package includes the repaired candidate source files, verification records, reconciliation report, SHA-256 manifest, and preserved historical records.
+
+Historical Record
+
+The original engine and historical test records remain unchanged.
+
+The earlier verification ledger contains 108 recorded executions:
+
+- 105 PASS
+- 2 FAIL
+- 1 expected policy rejection
+
+The previous failures have not been removed or overwritten by the repair results.
+
+Verification Boundaries
+
+This package does not establish:
+
+- Scientific validation
+- Empirical validation
+- Measurement authorization
+- Production readiness
+- Engine lock
+
+Cross-runtime canonical serialization remains OPEN.
+
+Release Status
+
+Research-stage software repair candidates.
+
+The results are limited to the specific cases covered by the recorded tests. The package is provided for inspection, reproducibility, and further verification.
+
+Integrity
+
+The release includes SHA-256 checksums for package files. The ZIP integrity and packaged file hashes were verified before release packaging.
+
+Original historical records and source files were preserved.
