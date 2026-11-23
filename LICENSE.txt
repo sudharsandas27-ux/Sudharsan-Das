@@ -1,0 +1,17 @@
+OIP PROPRIETARY COMMERCIAL LICENSE (RESEARCH-STAGE)
+
+Copyright (C) 2026 Sudharsan Das. All rights reserved.
+
+This package contains research-stage software and related materials associated with the Organic Intelligence Protocol (OIP), specifically the OIP BigInt Repair Release Candidate 01 package.
+
+Permission is granted to access and download this package for personal inspection, academic study, and non-commercial research review, provided that this copyright notice and attribution are retained.
+
+Without prior written permission from the copyright holder, commercial use, modification or adaptation for commercial use, redistribution, sublicensing, sale, commercial exploitation, or integration/deployment in commercial products, services, or operational systems is not permitted.
+
+Commercial use, implementation, integration, deployment, or licensing requires a separate written agreement with the copyright holder.
+
+This license does not transfer ownership of the Organic Intelligence Protocol (OIP), its methodology, protocol concepts, trademarks, or other intellectual property beyond the limited permissions expressly stated here. Third-party materials, if any, remain subject to their respective rights holders' terms.
+
+The software and materials are provided "AS IS", without warranties or guarantees of any kind.
+
+This license applies to the package identified above unless a separate written agreement states otherwise.
